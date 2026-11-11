@@ -1,0 +1,310 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #CEE3E6;
+    color: #191C1D;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* HEADER */
+
+.site-header {
+    min-height: 64px;
+    padding: 8px 48px;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    border-bottom: 2px solid #d4d4d4;
+}
+
+.logo {
+    justify-self: start;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #191C1D;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+nav {
+    justify-self: center;
+}
+
+nav a {
+    margin: 0 16px;
+    font-size: 16px;
+    color: #191C1D;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.search {
+    justify-self: end;
+    font-size: 20px;
+}
+
+/* MAIN */
+
+main {
+    background-color: #f4f7cf;
+    padding: 72px 64px 96px;
+}
+
+/* INTRO */
+
+.intro {
+    max-width: 1100px;
+    margin: 0 auto 90px;
+    text-align: center;
+}
+
+.intro h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 22px;
+}
+
+.intro p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #424849;
+}
+
+/* LAYOUT */
+
+.info-layout {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 72px;
+    align-items: start;
+}
+
+.left-content {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4E6264;
+}
+
+/* TEXT BLOCKS */
+
+.text-block h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1.12;
+    margin-bottom: 22px;
+}
+
+.text-block p {
+    max-width: 610px;
+    font-size: 14px;
+    line-height: 1.75;
+    color: #424849;
+}
+
+/* ORDERED LIST CARD */
+
+/* ORDERED LIST CARD */
+
+.steps-card {
+    background-color: #f5e6d3;
+    padding: 42px 40px;
+}
+
+.ritual-list {
+    list-style: none;
+    counter-reset: ritual-counter;
+    margin: 0;
+    padding: 0;
+}
+
+.ritual-list li {
+    counter-increment: ritual-counter;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    column-gap: 18px;
+    row-gap: 8px;
+    margin-bottom: 34px;
+}
+
+.ritual-list li:last-child {
+    margin-bottom: 0;
+}
+
+.ritual-list li::before {
+    content: counter(ritual-counter, decimal-leading-zero);
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    font-size: 12px;
+    color: #8a7b69;
+}
+
+.ritual-list h3 {
+    grid-column: 2;
+    grid-row: 1;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.ritual-list p {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #424849;
+    margin: 0;
+}
+
+/* IMAGE */
+
+.image-block img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+/* DEFINITION LIST */
+
+.lexicon {
+    padding-top: 4px;
+}
+
+.lexicon .eyebrow {
+    margin-bottom: 22px;
+}
+
+.lexicon dl {
+    margin: 0;
+}
+
+.lexicon div {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(25, 28, 29, 0.16);
+}
+
+.lexicon dd {
+    margin: 0;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #f3c8ee;
+    padding: 40px 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    margin: 0 0 8px;
+}
+
+footer p,
+footer a {
+    font-size: 12px;
+    color: #191C1D;
+    text-decoration: none;
+}
+
+.footer-links {
+    display: flex;
+    gap: 24px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    main {
+        padding: 56px 36px 80px;
+    }
+
+    .info-layout {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    .intro h1 {
+        font-size: 46px;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        grid-template-columns: 1fr;
+        padding: 18px 24px;
+        gap: 14px;
+        justify-items: center;
+    }
+
+    .logo,
+    nav,
+    .search {
+        justify-self: center;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 13px;
+    }
+
+    main {
+        padding: 40px 24px 64px;
+    }
+
+    .intro h1 {
+        font-size: 36px;
+    }
+
+    .text-block h2 {
+        font-size: 28px;
+    }
+
+    .steps-card {
+        padding: 30px 24px;
+    }
+
+    .image-block img {
+        height: 260px;
+    }
+
+    footer {
+        padding: 32px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
